@@ -10,6 +10,7 @@ public class BranchRepository {
     // Static collection stores all library branches
     private static final Map<String, Branch> BRANCH_STORAGE = new ConcurrentHashMap<>();
 
+
     public void save(Branch branch) {
         BRANCH_STORAGE.put(branch.getBranchId(), branch);
     }

@@ -9,6 +9,7 @@ public class LendingRecord {
     private final LocalDate checkoutDate;
     private LocalDate returnDate;
 
+
     public LendingRecord(String recordId, String patronId, Book book, LocalDate checkoutDate) {
         this.recordId = recordId;
         this.patronId = patronId;

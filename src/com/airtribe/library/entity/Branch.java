@@ -4,6 +4,7 @@ public class Branch {
     private final String branchId;
     private String name;
 
+
     public Branch(String branchId, String name) {
         this.branchId = branchId;
         this.name = name;

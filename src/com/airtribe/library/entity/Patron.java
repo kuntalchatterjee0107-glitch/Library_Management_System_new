@@ -12,6 +12,7 @@ public class Patron implements Observer {
     private final List<LendingRecord> borrowingHistory;
     private final Set<String> preferredGenres;
 
+
     public Patron(String patronId, String name, String email) {
         this.patronId = patronId;
         this.name = name;

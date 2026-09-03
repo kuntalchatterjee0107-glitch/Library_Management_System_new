@@ -11,6 +11,7 @@ public class LendingRepository {
     // Static storage for active checkouts mapped by ISBN
     private static final Map<String, LendingRecord> ACTIVE_LOANS = new ConcurrentHashMap<>();
 
+
     public void saveActiveLoan(String isbn, LendingRecord record) {
         ACTIVE_LOANS.put(isbn, record);
     }
