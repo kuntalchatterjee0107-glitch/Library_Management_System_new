@@ -69,6 +69,7 @@ public class LendingService {
     }
 
     public synchronized void reserveBook(String isbn, String patronId) {
+
         Book book = bookRepository.findByIsbn(isbn)
                 .orElseThrow(() -> new IllegalArgumentException("Book not found."));
         Patron patron = patronRepository.findById(patronId)
@@ -79,6 +80,7 @@ public class LendingService {
         }
 
         reservationRepository.enqueue(isbn, patron);
+
     }
 
     public List<Book> recommendBooks(String patronId, RecommendationStrategy strategy) {

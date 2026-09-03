@@ -11,7 +11,9 @@ public class ReservationRepository {
     private static final Map<String, Queue<Patron>> RESERVATIONS = new ConcurrentHashMap<>();
 
     public void enqueue(String isbn, Patron patron) {
+
         RESERVATIONS.computeIfAbsent(isbn, k -> new LinkedList<>()).offer(patron);
+
     }
 
     public Optional<Patron> peek(String isbn) {

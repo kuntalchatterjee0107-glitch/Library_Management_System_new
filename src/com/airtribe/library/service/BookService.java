@@ -42,11 +42,13 @@ public class BookService {
     }
 
     public List<Book> search(SearchStrategy strategy, String query, String branchId) {
+
         List<Book> books = bookRepository.findAll();
         if (branchId != null && !branchId.isBlank()) {
             books = books.stream()
                     .filter(b -> b.getBranchId().equalsIgnoreCase(branchId))
                     .collect(Collectors.toList());
+
         }
         return strategy.search(books, query);
     }

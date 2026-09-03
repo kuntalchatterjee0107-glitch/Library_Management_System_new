@@ -10,6 +10,7 @@ public class BookRepository {
     // Static collection stores all books in memory
     private static final Map<String, Book> BOOK_STORAGE = new ConcurrentHashMap<>();
 
+
     public void save(Book book) {
         BOOK_STORAGE.put(book.getIsbn(), book);
     }

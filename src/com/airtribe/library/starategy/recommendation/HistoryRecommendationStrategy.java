@@ -12,6 +12,7 @@ import java.util.stream.Collectors;
 public class HistoryRecommendationStrategy implements RecommendationStrategy {
     @Override
     public List<Book> recommend(Patron patron, Collection<Book> books) {
+
         Set<String> readIsbns = patron.getBorrowingHistory().stream()
                 .map(r -> r.getBook().getIsbn())
                 .collect(Collectors.toSet());
@@ -27,5 +28,6 @@ public class HistoryRecommendationStrategy implements RecommendationStrategy {
                         || favoredAuthors.contains(b.getAuthor().toLowerCase()))
                 .limit(5)
                 .collect(Collectors.toList());
+
     }
 }

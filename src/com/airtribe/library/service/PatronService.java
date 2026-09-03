@@ -32,11 +32,13 @@ public class PatronService {
     }
 
     public boolean addPreference(String patronId, String genre) {
+
         Optional<Patron> opt = patronRepository.findById(patronId);
         if (opt.isPresent()) {
             opt.get().addPreferredGenre(genre);
             return true;
         }
         return false;
+
     }
 }

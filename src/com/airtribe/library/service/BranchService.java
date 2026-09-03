@@ -26,6 +26,7 @@ public class BranchService {
     }
 
     public void transferBook(String isbn, String targetBranchId) {
+
         Book book = bookRepository.findByIsbn(isbn)
                 .orElseThrow(() -> new IllegalArgumentException("Book with ISBN " + isbn + " not found."));
         if (book.isBorrowed()) {
@@ -35,5 +36,6 @@ public class BranchService {
                 .orElseThrow(() -> new IllegalArgumentException("Target branch does not exist."));
 
         book.setBranchId(targetBranchId);
+
     }
 }
