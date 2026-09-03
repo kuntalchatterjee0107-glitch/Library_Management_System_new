@@ -11,6 +11,7 @@ public class Book {
     private String branchId;
     private boolean isBorrowed;
 
+
     public Book(String isbn, String title, String author, int publicationYear, String genre, String branchId) {
         this.isbn = isbn;
         this.title = title;
